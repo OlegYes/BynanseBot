@@ -22,7 +22,7 @@ After receiving the information from the message, I analyze it and then make a p
 Library dependencies are described in the requirements.txt file.
 
 You can use the configparser library to hide your API keys and passwords like I did, or write them explicitly as a regular variable:
-```{Python} {
+```python
 # Connect a file for reading data, passwords and keys for connecting to accounts
 config = configparser.ConfigParser()
 config.read("./venv/config.ini")
@@ -30,7 +30,8 @@ config.read("./venv/config.ini")
  set the parameters of the keys as an ordinary variable
 api_key = config['Config']['api']
 api_secret = config['Config']['secret']
-}```
+```
+
 
 
 Or:
