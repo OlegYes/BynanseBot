@@ -21,6 +21,19 @@ After receiving the information from the message, I analyze it and then make a p
 Аll the code is in the main.py file.
 Library dependencies are described in the requirements.txt file.
 
+You can use the configparser library to hide your API keys and passwords like I did, or write them explicitly as a regular variable:
+
+ Connect a file for reading data, passwords and keys for connecting to accounts
+config = configparser.ConfigParser()
+config.read("./venv/config.ini")
+
+ set the parameters of the keys as an ordinary variable
+api_key = config['Config']['api']
+api_secret = config['Config']['secret']
+
+Or:
+api_key = '******'
+api_secret = '******'
 
 #
 
@@ -43,5 +56,19 @@ UA.
 2. tradingview присилає повідомлення у вигляді Html листа тому довелось його парсити з використанням бібліотеки Beautiful Soup. 
 Після отримання інформації з повідомлення я аналізую її і далі здійснюю покупку/продаж, код написаний під конкретну ситуацію на ринку і під конкретну валютну пару її не складно замінити у коді та налаштувати під себе.
 
-Весь код знаходиться в файлі main.py
-Залежності бібліотек описані у файлі requirements.txt
+Весь код знаходиться в файлі main.py.
+Залежності бібліотек описані у файлі requirements.txt.
+
+Ви можете використовувати бібдіотеку configparser для приховання своїх ключів та паролів для API так як це зробив я, або прописати їх явно як звичайну змінну:
+
+Connect a file for reading data, passwords and keys for connecting to accounts
+config = configparser.ConfigParser()
+config.read("./venv/config.ini")
+
+ set the parameters of the keys as an ordinary variable
+api_key = config['Config']['api']
+api_secret = config['Config']['secret']
+
+Або:
+api_key = '******'
+api_secret = '******'
