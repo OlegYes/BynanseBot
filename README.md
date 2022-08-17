@@ -29,7 +29,8 @@ config.read("./venv/config.ini")
 
  set the parameters of the keys as an ordinary variable
 api_key = config['Config']['api']
-api_secret = config['Config']['secret']}```
+api_secret = config['Config']['secret']
+}```
 
 
 Or:
