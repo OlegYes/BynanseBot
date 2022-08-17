@@ -32,11 +32,12 @@ api_key = config['Config']['api']
 api_secret = config['Config']['secret']
 ```
 
-
-
 Or:
-api_key = '******'
-api_secret = '******'
+```python
+api_key = '********'
+api_secret = '********'
+```
+
 
 #
 
@@ -63,15 +64,18 @@ UA.
 Залежності бібліотек описані у файлі requirements.txt.
 
 Ви можете використовувати бібдіотеку configparser для приховання своїх ключів та паролів для API так як це зробив я, або прописати їх явно як звичайну змінну:
-
-Connect a file for reading data, passwords and keys for connecting to accounts
+```python
+# Connect a file for reading data, passwords and keys for connecting to accounts
 config = configparser.ConfigParser()
 config.read("./venv/config.ini")
 
  set the parameters of the keys as an ordinary variable
 api_key = config['Config']['api']
 api_secret = config['Config']['secret']
+```
 
 Або:
-api_key = '******'
-api_secret = '******'
+```python
+api_key = '********'
+api_secret = '********'
+```
