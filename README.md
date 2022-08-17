@@ -1,4 +1,5 @@
 # BynanseBot
+
 ENG.
 This project connects Tradingview, Binance and email that can support imap.
 this project is just an example of how you can solve the problem of automation of trading on Binanse, I do not recommend recklessly copying the code and hoping that your trade will be fully automated, you need to approach everything wisely and taking into account all the factors that can affect the productivity of your work.
@@ -18,9 +19,10 @@ when receiving the message i used the Imap protocol to get the content of the me
 After receiving the information from the message, I analyze it and then make a purchase/sale, the code is written for a specific situation on the market and for a specific currency pair, it is not difficult to replace it in the code and customize it for yourself.
 
 Аll the code is in the main.py file.
+Library dependencies are described in the requirements.txt file.
 
 
-
+#
 
 UA.
 
@@ -42,3 +44,4 @@ UA.
 Після отримання інформації з повідомлення я аналізую її і далі здійснюю покупку/продаж, код написаний під конкретну ситуацію на ринку і під конкретну валютну пару її не складно замінити у коді та налаштувати під себе.
 
 Весь код знаходиться в файлі main.py 
+Залежності бібліотек описані у файлі requirements.txt
