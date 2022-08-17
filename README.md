@@ -37,7 +37,7 @@ Or:
 api_key = '********'
 api_secret = '********'
 ```
-
+I would be glad to hear your suggestions or comments.
 
 #
 
@@ -79,3 +79,5 @@ api_secret = config['Config']['secret']
 api_key = '********'
 api_secret = '********'
 ```
+
+Буду радий почути ваші пропозиції або зауваження.
