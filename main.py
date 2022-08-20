@@ -26,6 +26,7 @@ def price(symbol):
 def sell_coin():
     balance = client.get_asset_balance(asset='DREP') # ask binance for information about the balance of the coin
     all_coin_balanse = balance['free']  #  select the amount of free coins from our balance, "free" are those we can work with and are not scheduled in other orders(see the documentation " get_asset_balance" https://python-binance.readthedocs.io/en/latest/binance.html?highlight=client.get_asset_balance#binance.client.Client.get_asset_balance)
+    print("Sell")
     order = client.order_market_sell(  # we create an order at the market price
         symbol='DREPUSDT',  # the currency pair on which you want to create an order
         quantity=all_coin_balanse)  # the number of coins we want to sell, in our case we selected all the coins of this pair
@@ -37,6 +38,7 @@ def buy_coin():   # функція для покупки понеток, куп�
     all_coin_balanse_usdt = float(balance_usdt['free']) # get the amount of USDT contained in our cart
     a = price('DREPUSDT') # here we lose the price(symbol) function described above and get the price of DREP vs. USDT
     coin_byers = all_coin_balanse_usdt // a #  by a simple formula we calculate how many coins we can buy
+    print("Buy")
     order = client.order_market_buy( # we create a purchase order
         symbol='DREPUSDT',
         quantity=coin_byers)
@@ -97,9 +99,10 @@ def get_messege():
             return dataInfo
 
 
-dTime = "None"
+dTime = "2022-08-20T00:15:00Z"
 def logic():   #  the logic of our bot, according to which and when we will buy/sell on the market
     messege_mail = get_messege()
+    count = False
     global dTime
     if messege_mail['dTime'] != dTime:  # we filter the new message from the old one so that the system does not take the previous message again
         dTime = messege_mail['dTime']
@@ -113,7 +116,7 @@ def logic():   #  the logic of our bot, according to which and when we will buy/
         elif messege_mail['do_it'] == 'buy ':  # if people buy we will sell
             if all_coin_balanse_main != 0:
                 sell_coin()
-                count = False
+
     if count == True:  #   this block of code will sell coins if their price changes by 1 percent in any direction, I decided so based on my risk management
         proc = price_order_duy/100
         prise_real_time = price("DREPUSDT")
